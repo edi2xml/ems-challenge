@@ -27,6 +27,7 @@ export default function TimesheetsPage() {
     timesheetsAndEmployees: Timesheet[];
   };
   const [view, setView] = useState("table");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     let calendarInstance: any = null;
@@ -64,6 +65,11 @@ export default function TimesheetsPage() {
     };
   }, [view, timesheetsAndEmployees]);
 
+  // Filter timesheets based on search input
+  const filteredTimesheets = timesheetsAndEmployees.filter((timesheet) =>
+    timesheet.full_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="container">
       <div className="page-header">
@@ -84,6 +90,17 @@ export default function TimesheetsPage() {
         </div>
       </div>
 
+      {/* Search Bar */}
+      <div className="filters-section">
+        <input
+          type="text"
+          placeholder="Search by employee name"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+      </div>
+
       {view === "table" ? (
         <div className="table-container">
           <table className="data-table">
@@ -96,7 +113,7 @@ export default function TimesheetsPage() {
               </tr>
             </thead>
             <tbody>
-              {timesheetsAndEmployees.map((timesheet: Timesheet) => (
+              {filteredTimesheets.map((timesheet: Timesheet) => (
                 <tr key={timesheet.id}>
                   <td>{timesheet.id}</td>
                   <td>{timesheet.full_name}</td>
@@ -116,7 +133,7 @@ export default function TimesheetsPage() {
         <Link to="/timesheets/new" className="button secondary-button">
           New Timesheet
         </Link>
-        <Link to="/employees" className="button secondary-button ">
+        <Link to="/employees" className="button secondary-button">
           Employees
         </Link>
       </ul>
