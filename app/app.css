@@ -86,6 +86,7 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  margin-right: 10px;
 }
 
 .primary-button {
