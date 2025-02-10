@@ -199,18 +199,16 @@ export default function EmployeePage() {
         </div>
 
         {/* Employee Photo */}
-        {employee.photo_path && (
-          <div className="form-row">
-            <div className="form-group">
-              <label>Current Photo</label>
-              <img
-                src={employee.photo_path}
-                alt="Employee"
-                style={{ maxWidth: "200px" }}
-              />
-            </div>
+        <div className="form-row">
+          <div className="form-group">
+            <label>Current Photo</label>
+            <img
+              src={`/${employee.photo_path}`}
+              alt="Employee"
+              style={{ maxWidth: "200px" }}
+            />
           </div>
-        )}
+        </div>
 
         <div className="header-actions">
           <Link to="/employees" className="button secondary-button">
