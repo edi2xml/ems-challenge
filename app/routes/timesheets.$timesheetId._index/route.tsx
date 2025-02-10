@@ -50,10 +50,10 @@ const timesheet = {
   const startTime = new Date(timesheet.start_time as string);
   const endTime = new Date(timesheet.end_time as string);
 
-  if (startTime >= endTime) {
-    return 
-      { error: "End time must be after start time" }
-  }
+   if (startTime >= endTime) {
+     return { error: "End time must be after start time" };
+   }
+
 
   const db = await getDB();
   await db.run(
@@ -77,13 +77,14 @@ export default function EditTimesheet() {
     <div className="container">
       <div className="page-header">
         <h1 className="page-title">Edit Timesheet</h1>
+
         <div className="header-actions">
           <Form method="post" style={{ display: "inline" }}>
             <button
               type="submit"
               name="intent"
               value="delete"
-              className="button secondary-button"
+              className="delete-button"
               onClick={(e) => {
                 if (
                   !confirm("Are you sure you want to delete this timesheet?")

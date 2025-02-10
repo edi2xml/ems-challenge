@@ -90,24 +90,24 @@ export default function TimesheetsPage() {
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className="filters-section">
-        <input
-          type="text"
-          placeholder="Search by employee name"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
-        />
-      </div>
-
       {view === "table" ? (
         <div className="table-container">
+          {/* Search Bar */}
+          <div className="filters-section">
+            <input
+              type="text"
+              placeholder="Search by employee name"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
           <table className="data-table">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Employee</th>
+                <th>Summary</th>
                 <th>Start Time</th>
                 <th>End Time</th>
               </tr>
@@ -117,8 +117,19 @@ export default function TimesheetsPage() {
                 <tr key={timesheet.id}>
                   <td>{timesheet.id}</td>
                   <td>{timesheet.full_name}</td>
+                  <td>{timesheet.summary}</td>
                   <td>{timesheet.start_time}</td>
                   <td>{timesheet.end_time}</td>
+                  <td>
+                    <div className="action-buttons">
+                      <Link
+                        to={`/timesheets/${timesheet.id}`}
+                        className="button secondary-button"
+                      >
+                        Edit
+                      </Link>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

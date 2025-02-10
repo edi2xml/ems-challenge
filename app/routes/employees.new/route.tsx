@@ -33,6 +33,15 @@ export async function action({ request }: ActionFunctionArgs) {
     photo: formData.get("photo_path"), // Handle the uploaded file
   };
 
+  if (employee.end_date) {
+    const startDate = new Date(employee.start_date as string);
+    const endDate = new Date(employee.end_date as string);
+
+    if (endDate < startDate) {
+      return { error: "End date cannot be before start date." };
+    }
+  }
+
 
   // Age validation
   const today = new Date();

@@ -1,5 +1,6 @@
 import {
   redirect,
+  useActionData,
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
 } from "react-router-dom";
@@ -51,6 +52,31 @@ export async function action({ request, params }: ActionFunctionArgs) {
     end_date: formData.get("end_date") || null,
   };
 
+  // End Date Validation
+  if (employee.end_date) {
+    const startDate = new Date(employee.start_date as string);
+    const endDate = new Date(employee.end_date as string);
+
+    if (endDate < startDate) {
+      return { error: "End date cannot be before start date." };
+    }
+  }
+
+  // Age Validation
+  const today = new Date();
+  const birthDate = new Date(employee.date_of_birth as string);
+  const age = today.getFullYear() - birthDate.getFullYear();
+  const isAdult = age >= 18;
+  if (!isAdult) {
+    return { error: "Employee must be at least 18 years old." };
+  }
+
+  // Salary Validation
+  const salary = parseFloat(employee.salary as string);
+  if (salary < 1000) {
+    return { error: "Salary must be greater than 1000." };
+  }
+
   const db = await getDB();
   await db.run(
     `UPDATE employees SET 
@@ -66,6 +92,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
 
 export default function EmployeePage() {
   const { employee, departments } = useLoaderData<typeof loader>();
+  const actionData = useActionData(); 
 
   return (
     <div className="container">
@@ -79,7 +106,7 @@ export default function EmployeePage() {
               type="submit"
               name="intent"
               value="delete"
-              className="button secondary-button"
+              className="delete-button"
               onClick={(e) => {
                 if (
                   !confirm("Are you sure you want to delete this employee?")
@@ -93,7 +120,12 @@ export default function EmployeePage() {
           </Form>
         </div>
       </div>
-
+      {/* Display errors if any */}
+      {actionData?.error && (
+        <div className="error-message">
+          <p>{actionData.error}</p>
+        </div>
+      )}
       <Form method="post" className="form-container">
         {/* Personal Information */}
         <div className="form-row">

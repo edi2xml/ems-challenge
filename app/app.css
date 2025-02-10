@@ -88,6 +88,17 @@
   display: inline-block;
   margin-right: 10px;
 }
+.delete-button {
+  padding: 0.5rem 1rem;
+  background-color: red;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  border-radius: 4px;
+}
 
 .primary-button {
   background-color: #3b82f6;
