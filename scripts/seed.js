@@ -27,7 +27,7 @@ const employees = [
     department: "Engineering",
     salary: 85000.0,
     start_date: "2024-01-15",
-    end_date: null,
+    end_date: "2025-01-15",
     photo_path: null,
   },
   {
@@ -38,10 +38,9 @@ const employees = [
     date_of_birth: "1992-03-10",
     job_title: "UX Designer",
     department: "Design",
-
     salary: 78000.0,
     start_date: "2024-02-01",
-    end_date: null,
+    end_date: "2025-02-01",
     photo_path: null,
   },
   {
@@ -54,7 +53,7 @@ const employees = [
     department: "Product",
     salary: 95000.0,
     start_date: "2023-11-01",
-    end_date: null,
+    end_date: "2024-11-01",
     photo_path: null,
   },
   {
@@ -67,7 +66,7 @@ const employees = [
     department: "Design",
     salary: 78000.0,
     start_date: "2024-02-01",
-    end_date: null,
+    end_date: "2025-02-01",
     photo_path: null,
   },
   {
@@ -79,9 +78,8 @@ const employees = [
     job_title: "UX Designer",
     department: "Design",
     salary: 78000.0,
-
     start_date: "2024-02-01",
-    end_date: null,
+    end_date: "2025-02-01",
     photo_path: null,
   },
   {
@@ -94,10 +92,11 @@ const employees = [
     department: "Design",
     salary: 78000.0,
     start_date: "2024-02-01",
-    end_date: null,
+    end_date: "2025-02-01",
     photo_path: null,
   },
 ];
+
 
 
 const timesheets = [
