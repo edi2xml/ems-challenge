@@ -1,0 +1,20 @@
+this text file contains my reasoning and plan to tackle this challenge
+this serves as insight to what im thinking, and planning
+
+
+steps: // should be updated with each and every task to keep track of progress
+1 - fork the original repo and clone
+2 - explore project structure, code style, organization, test code, get a general feel for the project at hand
+3 - fix any possible typescript issues / dependency issues
+4 - brainstorm ideas to tackle this challenge
+
+basic plan:
+1 - finish functionality. a functional project with no design is better than a well designed project that doesnt achieve its task
+2 - when basic functionality is done, design and enhance the style of project for user statisfaction and improving user experience
+3 - if time permits, fix layout of project to make the project more understandable to users. (jamil's note: Assume all users a brain dead and require very simple and intuitive UI)
+4 - if time permits, create custom components for better reusablity and better maintenance on the long run
+
+Note: Tutoring may affect time commited to project
+
+Note: I edited the data to for more detailed employees allowing for more queries
+
