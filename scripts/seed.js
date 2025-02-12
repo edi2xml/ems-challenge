@@ -18,13 +18,46 @@ const db = new sqlite3.Database(sqlitePath);
 
 const employees = [
   {
-    full_name: 'John Doe'
+    full_name: 'John Doe',
+    email: 'john.doe@example.com',
+    phone_number: '123-456-7890',
+    date_of_birth: '1990-01-01',
+    job_title: 'Software Engineer',
+    department: 'Engineering',
+    salary: 80000,
+    start_date: '2020-01-01',
+    end_date: null, 
+    photo_path: '/photos/john_doe.jpg', 
+    cv_path: '/cv/john_doe_cv.pdf', 
+    id_document_path: '/id/john_doe_id.pdf' 
   },
   {
-    full_name: 'Jane Smith'
+    full_name: 'Jane Smith',
+    email: 'jane.smith@example.com',
+    phone_number: '987-654-3210',
+    date_of_birth: '1985-05-15',
+    job_title: 'Product Manager',
+    department: 'Product',
+    salary: 90000,
+    start_date: '2019-06-01',
+    end_date: null, 
+    photo_path: '/photos/jane_smith.jpg', 
+    cv_path: '/cv/jane_smith_cv.pdf', 
+    id_document_path: '/id/jane_smith_id.pdf' 
   },
   {
-    full_name: 'Alice Johnson'
+    full_name: 'Alice Johnson',
+    email: 'alice.johnson@example.com',
+    phone_number: '555-555-5555',
+    date_of_birth: '1995-12-25',
+    job_title: 'UX Designer',
+    department: 'Design',
+    salary: 75000,
+    start_date: '2021-03-15',
+    end_date: null, 
+    photo_path: '/photos/alice_johnson.jpg', 
+    cv_path: '/cv/alice_johnson_cv.pdf', 
+    id_document_path: '/id/alice_johnson_id.pdf' 
   },
 ];
 
@@ -33,16 +66,19 @@ const timesheets = [
     employee_id: 1,
     start_time: '2025-02-10 08:00:00',
     end_time: '2025-02-10 17:00:00',
+    summary: 'Worked on backend API development' 
   },
   {
     employee_id: 2,
     start_time: '2025-02-11 12:00:00',
     end_time: '2025-02-11 17:00:00',
+    summary: 'Product roadmap planning meeting' 
   },
   {
     employee_id: 3,
     start_time: '2025-02-12 07:00:00',
     end_time: '2025-02-12 16:00:00',
+    summary: 'Designed new user interface mockups' 
   },
 ];
 
