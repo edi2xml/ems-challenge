@@ -27,9 +27,6 @@ const employees = [
     salary: 80000,
     start_date: '2020-01-01',
     end_date: null, 
-    photo_path: '/photos/john_doe.jpg', 
-    cv_path: '/cv/john_doe_cv.pdf', 
-    id_document_path: '/id/john_doe_id.pdf' 
   },
   {
     full_name: 'Jane Smith',
@@ -41,9 +38,6 @@ const employees = [
     salary: 90000,
     start_date: '2019-06-01',
     end_date: null, 
-    photo_path: '/photos/jane_smith.jpg', 
-    cv_path: '/cv/jane_smith_cv.pdf', 
-    id_document_path: '/id/jane_smith_id.pdf' 
   },
   {
     full_name: 'Alice Johnson',
@@ -55,9 +49,6 @@ const employees = [
     salary: 75000,
     start_date: '2021-03-15',
     end_date: null, 
-    photo_path: '/photos/alice_johnson.jpg', 
-    cv_path: '/cv/alice_johnson_cv.pdf', 
-    id_document_path: '/id/alice_johnson_id.pdf' 
   },
 ];
 
